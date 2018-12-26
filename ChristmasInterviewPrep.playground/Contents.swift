@@ -88,4 +88,10 @@ func binarySearch(numbers: [Int], num: Int) -> Bool {
 }
 binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
 
-
+/*
+ 
+    question 4) given an array, numbers, of N integers, return an array output such that output[i] is equal to the product  of all integers exept numbers[i]
+    question 5) create a factorial recurssive function that returns an Int  (e.g. factorialRecurssive(num: 5) returns 120 (5*4*3*2*1)
+    question 6) check if a word has all unique characters. returns Boolean of the unique word.
+ 
+ */
