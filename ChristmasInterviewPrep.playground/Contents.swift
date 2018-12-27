@@ -13,11 +13,6 @@
  */
 
 
-
-
-
-
-
 // 1)
 func largestThreeProducts(array: [Int]) -> Int {
     
@@ -37,10 +32,6 @@ func largestThreeProducts(array: [Int]) -> Int {
 largestThreeProducts(array: [-100, -400, 4, 5, 3, 6, 1, 22, 100])
 
 
-
-
-
-
 // 2)
 func oceanViewApartment(apartStory: [Int]) -> [Int] {
     let reversed = apartStory.reversed()
@@ -55,10 +46,6 @@ func oceanViewApartment(apartStory: [Int]) -> [Int] {
     return oceanViewApartments
 }
 oceanViewApartment(apartStory: [4, 5, 4, 2, 3, 1])             // this gives the index in reverse order
-
-
-
-
 
 
 // 3)
@@ -88,6 +75,7 @@ func binarySearch(numbers: [Int], num: Int) -> Bool {
 }
 binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
 
+
 /*
  
     question 4) given an array, numbers, of N integers, return an array output such that output[i] is equal to the product  of all integers exept numbers[i]
@@ -95,3 +83,54 @@ binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
     question 6) check if a word has all unique characters. returns Boolean of the unique word.
  
  */
+
+
+// 4)
+func productOfAll(numbers: [Int]) -> [Int] {
+    var returnArray = [Int]()
+    var productOfAll = numbers.reduce(1, { $0 * $1 })
+    
+    for i in numbers {
+        returnArray.append(productOfAll / i)
+    }
+    
+    return returnArray
+}
+productOfAll(numbers: [2, 5, 3, 4])
+
+
+// 5)
+func factorialRecurssive(num: Int) -> Int {
+    if num == 1 || num == 0 {
+        return 1
+    }
+    else {
+        return num * factorialRecurssive(num: num - 1)
+    }
+}
+factorialRecurssive(num: 10)
+
+
+// 6)
+func uniqueWord(word: String) -> Bool {
+    
+    var wordsSeen = Set<Character>()
+    var uniqueCount = 0
+    
+    for i in word.lowercased() {
+        if wordsSeen.contains(i) {
+            return false
+        } else {
+            uniqueCount += 1
+            wordsSeen.insert(i)
+        }
+    }
+    
+    if uniqueCount == word.count {
+        return true
+    } else {
+        return false
+    }
+    return false
+}
+uniqueWord(word: "Happy")
