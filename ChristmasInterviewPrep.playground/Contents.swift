@@ -80,7 +80,7 @@ binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
  
     question 4) given an array, numbers, of N integers, return an array output such that output[i] is equal to the product  of all integers exept numbers[i]
     question 5) create a factorial recurssive function that returns an Int  (e.g. factorialRecurssive(num: 5) returns 120 (5*4*3*2*1)
-    question 6) check if a word has all unique characters. returns Boolean of the unique word.
+    question 6) check if a word has all unique characters. returns true if is a unique word.
  
  */
 
@@ -88,7 +88,7 @@ binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
 // 4)
 func productOfAll(numbers: [Int]) -> [Int] {
     var returnArray = [Int]()
-    var productOfAll = numbers.reduce(1, { $0 * $1 })
+    let productOfAll = numbers.reduce(1, { $0 * $1 })
     
     for i in numbers {
         returnArray.append(productOfAll / i)
@@ -108,7 +108,7 @@ func factorialRecurssive(num: Int) -> Int {
         return num * factorialRecurssive(num: num - 1)
     }
 }
-factorialRecurssive(num: 10)
+factorialRecurssive(num: 5)
 
 
 // 6)
@@ -131,6 +131,5 @@ func uniqueWord(word: String) -> Bool {
     } else {
         return false
     }
-    return false
 }
 uniqueWord(word: "Happy")
