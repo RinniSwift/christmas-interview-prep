@@ -76,6 +76,11 @@ func binarySearch(numbers: [Int], num: Int) -> Bool {
 binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
 
 
+
+
+
+
+
 /*
  
     question 4) given an array, numbers, of N integers, return an array output such that output[i] is equal to the product  of all integers exept numbers[i]
@@ -133,3 +138,62 @@ func uniqueWord(word: String) -> Bool {
     }
 }
 uniqueWord(word: "Happy")
+
+
+
+
+
+
+
+/*
+ 
+ question 7) reverse words. (e.g. "I am happy" returns "happy am I")
+ question 8) create a die with given sides that randomizes a number
+ question 9) given an array of duplicate Ints, return the number that hasnt been duplicated
+ 
+ */
+
+
+
+
+
+
+// 7)
+func reverseWords(sentence: String) -> String {
+    
+    var arrayOfWords = sentence.split(separator: " ")
+    return arrayOfWords.reversed().joined(separator: " ")
+    
+}
+reverseWords(sentence: "I am happy")
+
+
+// 8)
+func die(sides: Int) -> Int {
+    return Int.random(in: 1...sides)
+}
+die(sides: 6)
+
+
+// 9)
+func findUniqueNum(duplicates: [Int]) -> [Int] {
+    var uniqueNums = [Int]()
+    var numbersCount = [Int: Int]()
+    
+    for i in duplicates {
+        if numbersCount.keys.contains(i) {
+            numbersCount[i]! += 1
+        } else {
+            numbersCount[i] = 1
+        }
+    }
+    
+    for i in numbersCount {
+        if i.value == 1 {
+            uniqueNums.append(i.key)
+        }
+    }
+    
+    return uniqueNums
+}
+findUniqueNum(duplicates: [2, 2, 3, 4, 5, 5, 4, 7, 8, 6, 7, 8])
