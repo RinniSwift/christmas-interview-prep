@@ -76,11 +76,6 @@ func binarySearch(numbers: [Int], num: Int) -> Bool {
 binarySearch(numbers: [1, 2, 3, 4, 5], num: 4)
 
 
-
-
-
-
-
 /*
  
     question 4) given an array, numbers, of N integers, return an array output such that output[i] is equal to the product  of all integers exept numbers[i]
@@ -140,11 +135,6 @@ func uniqueWord(word: String) -> Bool {
 uniqueWord(word: "Happy")
 
 
-
-
-
-
-
 /*
  
  question 7) reverse words. (e.g. "I am happy" returns "happy am I")
@@ -152,10 +142,6 @@ uniqueWord(word: "Happy")
  question 9) given an array of duplicate Ints, return the number that hasnt been duplicated
  
  */
-
-
-
-
 
 
 // 7)
@@ -193,7 +179,16 @@ func findUniqueNum(duplicates: [Int]) -> [Int] {
             uniqueNums.append(i.key)
         }
     }
-    
     return uniqueNums
 }
 findUniqueNum(duplicates: [2, 2, 3, 4, 5, 5, 4, 7, 8, 6, 7, 8])
+
+
+/*
+ 
+ question 10) replace all spaces in a sentence with "SPACE"
+ question 11) return true if the word is palindrome. palindrome: the word is the same when reversed.
+ question 12) check if two given strings are anagrams of eachother. e.g. "cinema" and "iceman" are anagrams
+ 
+ */
+
